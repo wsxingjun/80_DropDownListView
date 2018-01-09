@@ -1,5 +1,6 @@
 package it.oztaking.com.droplistview;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         popupWindow = new PopupWindow(listView, et_input.getWidth(), 300);
         //设置可以获取焦点
         popupWindow.setFocusable(true);
+
+        //设置点击外部区域，自动隐藏
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());//设置为空的背景，响应点击事件
+
         //显示在指定的控件下
         popupWindow.showAsDropDown(et_input,0,-5);
     }
@@ -61,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listView.setBackgroundResource(R.drawable.listview_background);
         //增加监听事件
         listView.setOnItemClickListener(this);
+
+
         datas = new ArrayList<String>();
         //创建一些数据
         for (int i=0; i<30; i++){
