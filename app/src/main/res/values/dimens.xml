@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activitu_vertical_margin">30dp</dimen>
+    <dimen name="activitu_horizontal_margin">30dp</dimen>
+</resources>
